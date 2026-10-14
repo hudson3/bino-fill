@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Payment | Practice Air</title><link rel="stylesheet" href="site.css"></head>
+<body>
+<header><span class="brand">Practice Air</span><span>AUS → SFO · 1 adult</span></header>
+<ol class="steps"><li>Sign in</li><li>Traveler</li><li>Contact &amp; documents</li><li class="on">Payment</li></ol>
+<h1>Review and pay</h1>
+<p class="total">Total: $482.30</p>
+<form onsubmit="return go('done.html')">
+  <fieldset><legend>Card details</legend>
+    <div class="row"><div><label for="cn">Name on card</label><input type="text" id="cn" name="cardholder" required data-name="name on card"></div></div>
+    <div class="row">
+      <div><label for="cc">Card number</label><input type="text" id="cc" name="cardnumber" inputmode="numeric" required data-name="card number"></div>
+      <div style="max-width:120px"><label for="exp">Expiry</label><input type="text" id="exp" name="exp" placeholder="MM / YY" maxlength="7"></div>
+      <div style="max-width:110px"><label for="cvc">Security code</label><input type="password" id="cvc" name="cvc" maxlength="4"></div>
+    </div>
+    <div class="row"><div style="max-width:160px"><label for="bz">Billing ZIP</label><input type="text" id="bz" name="billing_zip"></div></div>
+  </fieldset>
+  <fieldset><legend>Or pay with a saved wallet</legend>
+    <iframe title="Secure card payment frame" sandbox="allow-scripts" style="width:100%;height:70px;border:1px solid #ddd;border-radius:6px"
+      srcdoc="<body style='font:14px sans-serif'><label>Wallet card number <input name='walletcard'></label></body>"></iframe>
+  </fieldset>
+  <label class="inline"><input type="checkbox" name="terms" required data-name="fare rules"> I accept the fare rules and conditions of carriage</label>
+  <div id="problems" class="error" style="display:none"></div>
+  <div class="actions"><button type="button" onclick="history.back()">Back</button><button type="submit" class="primary">Pay $482.30</button></div>
+</form>
+<script src="site.js"></script>
+</body></html>

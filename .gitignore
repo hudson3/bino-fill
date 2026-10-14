@@ -1,0 +1,7 @@
+.build/
+.venv/
+.practice-home/
+.DS_Store
+__pycache__/
+*.xcodeproj
+.swiftpm/

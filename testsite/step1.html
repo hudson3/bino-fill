@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Sign in | Practice Air</title><link rel="stylesheet" href="site.css"></head>
+<body>
+<header><span class="brand">Practice Air</span><span><input type="text" name="q" placeholder="Search flights" aria-label="Search" style="width:160px"> <button type="button">Search</button></span></header>
+<h1>Sign in to continue your booking</h1>
+<p class="hint">This is a practice site for Bino. Nothing here is real.</p>
+<form onsubmit="return go('step2.html')">
+  <fieldset><legend>Your account</legend>
+    <div class="row"><div><label for="uid">SkyPoints username</label><input type="text" id="uid" name="login_id" required data-name="username"></div></div>
+    <div class="row"><div><label for="pw">Password</label><input type="password" id="pw" name="login_pw" required data-name="password"></div></div>
+    <label class="inline"><input type="checkbox" name="remember"> Keep me signed in</label>
+  </fieldset>
+  <div id="problems" class="error" style="display:none"></div>
+  <div class="actions"><button type="button">Forgot password?</button><button type="submit" class="primary">Sign in</button></div>
+</form>
+<script src="site.js"></script>
+</body></html>

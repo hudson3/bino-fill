@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Contact and documents | Practice Air</title><link rel="stylesheet" href="site.css"></head>
+<body>
+<header><span class="brand">Practice Air</span><span>AUS → SFO · 1 adult</span></header>
+<ol class="steps"><li>Sign in</li><li>Traveler</li><li class="on">Contact &amp; documents</li><li>Payment</li></ol>
+<h1>How do we reach you?</h1>
+<form onsubmit="return go('step4.html')">
+  <fieldset><legend>Contact</legend>
+    <div class="row">
+      <div><label for="itin">Where should we send your itinerary?</label><input type="text" id="itin" name="itin_dest"></div>
+      <div><label for="reach">Number to reach you on the day of travel</label><input type="text" id="reach" name="dayof_contact"></div>
+    </div>
+    <div class="row">
+      <div><label>Mobile phone</label>
+        <span style="display:flex;gap:6px"><input type="text" name="ph_a" maxlength="3" aria-label="Mobile phone area code" style="width:60px"><input type="text" name="ph_b" maxlength="3" aria-label="Mobile phone first three digits" style="width:60px"><input type="text" name="ph_c" maxlength="4" aria-label="Mobile phone last four digits" style="width:70px"></span></div>
+    </div>
+  </fieldset>
+  <fieldset><legend>Home address</legend>
+    <div class="row"><div><label for="a1">Address</label><input type="text" id="a1" name="addr1" required data-name="address"></div></div>
+    <div class="row"><div><label for="a2">Address (continued)</label><input type="text" id="a2" name="addr2"></div></div>
+    <div class="row">
+      <div><label for="cty">City</label><input type="text" id="cty" name="city" value="Dallas"></div>
+      <div><label for="st">State</label><select id="st" name="region"><option value="">Select</option><option value="CA">CA - California</option><option value="NY">NY - New York</option><option value="TX">TX - Texas</option><option value="WA">WA - Washington</option></select></div>
+      <div><label for="zip">ZIP</label><input type="text" id="zip" name="zip" maxlength="10"></div>
+    </div>
+    <div class="row"><div><label for="ctry">Country</label><select id="ctry" name="ctry"><option value="">Select</option><option value="CAN">Canada</option><option value="MEX">Mexico</option><option value="USA">United States</option></select></div></div>
+  </fieldset>
+  <fieldset><legend>Passport</legend>
+    <div class="row">
+      <div><label for="doc">Document number</label><input type="text" id="doc" name="apis.docNum"></div>
+      <div><label for="iss">Country of issue</label><select id="iss" name="apis.issuer"><option value="">Select</option><option value="CA">Canada</option><option value="US">United States</option></select></div>
+      <div><label for="dex">Expiry date</label><input type="text" id="dex" name="apis.docExpiry" placeholder="DD/MM/YYYY"></div>
+    </div>
+  </fieldset>
+  <fieldset><legend>Extras</legend>
+    <div class="row"><div><label for="promo">Promo code</label><input type="text" id="promo" name="promo"></div><div style="align-self:end"><button type="button">Apply</button></div></div>
+    <label class="inline"><input type="checkbox" name="insurance"> Add trip protection for $39</label>
+  </fieldset>
+  <div id="problems" class="error" style="display:none"></div>
+  <div class="actions"><button type="button" onclick="history.back()">Back</button><button type="submit" class="primary">Continue to payment</button></div>
+</form>
+<script src="site.js"></script>
+<script>control('itin', 'itinerary email');</script>
+</body></html>

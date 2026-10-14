@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Join SkyPoints | Practice Air</title><link rel="stylesheet" href="site.css"></head>
+<body>
+<header><span class="brand">Practice Air</span><span><a href="step1.html">Sign in</a></span></header>
+<h1>Create your SkyPoints account</h1>
+<p class="hint">This is a practice site for Bino. Nothing here is real, and no account is made.</p>
+<form onsubmit="return go('joined.html')">
+  <fieldset><legend>About you</legend>
+    <div class="row">
+      <div><label for="fn">First name</label><input type="text" id="fn" name="first_name" required data-name="first name"></div>
+      <div><label for="ln">Last name</label><input type="text" id="ln" name="last_name" required data-name="last name"></div>
+    </div>
+    <div class="row"><div><label for="em">Email</label><input type="email" id="em" name="email" required data-name="email"></div></div>
+  </fieldset>
+  <fieldset><legend>Your new account</legend>
+    <div class="row"><div><label for="uid">Choose a username</label><input type="text" id="uid" name="username" required data-name="username"></div></div>
+    <div class="row">
+      <div><label for="pw1">Create a password</label><input type="password" id="pw1" name="new_pw" autocomplete="new-password" required data-name="password"></div>
+      <div><label for="pw2">Confirm password</label><input type="password" id="pw2" name="new_pw_again" autocomplete="new-password" required data-name="password again"></div>
+    </div>
+    <label class="inline"><input type="checkbox" name="terms" required data-name="the terms box"> I agree to the SkyPoints terms</label>
+  </fieldset>
+  <div id="problems" class="error" style="display:none"></div>
+  <div class="actions"><button type="submit" class="primary">Create account</button></div>
+</form>
+<script src="site.js"></script>
+</body></html>

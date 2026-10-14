@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Traveler details | Practice Air</title><link rel="stylesheet" href="site.css"></head>
+<body>
+<header><span class="brand">Practice Air</span><span>AUS → SFO · 1 adult</span></header>
+<ol class="steps"><li>Sign in</li><li class="on">Traveler</li><li>Contact &amp; documents</li><li>Payment</li></ol>
+<h1>Who is flying?</h1>
+<form onsubmit="return go('step3.html')">
+  <fieldset><legend>Traveler 1 (adult)</legend>
+    <div class="row">
+      <div style="max-width:110px"><label for="ttl">Title</label><select id="ttl" name="pax[0].title"><option value="">Select</option><option>Mr</option><option>Mrs</option><option>Ms</option><option>Mx</option><option>Dr</option></select></div>
+      <div><label for="gn">Given name (as on passport)</label><input type="text" id="gn" name="pax[0].givenName" required data-name="given name"></div>
+      <div><label for="mn">Middle name</label><input type="text" id="mn" name="pax[0].mn"></div>
+      <div><label for="sn">Surname</label><input type="text" id="sn" name="pax[0].sn" required data-name="surname"></div>
+    </div>
+    <div class="row">
+      <div><label for="bm">Date of birth</label><select id="bm" name="pax[0].birth.m" required data-name="birth month"><option value="">Month</option><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div>
+      <div><label for="bd">&nbsp;</label><select id="bd" name="pax[0].birth.d" required data-name="birth day" aria-label="Day of birth"></select></div>
+      <div><label for="by">&nbsp;</label><select id="by" name="pax[0].birth.y" required data-name="birth year" aria-label="Year of birth"></select></div>
+    </div>
+    <div class="row inline"><div role="radiogroup" aria-labelledby="gl"><span id="gl" style="font-size:13px;color:#555;display:block">Gender (as shown on ID)</span>
+      <label><input type="radio" name="pax[0].gender" value="M" required data-name="gender"> Male</label>
+      <label><input type="radio" name="pax[0].gender" value="F"> Female</label>
+      <label><input type="radio" name="pax[0].gender" value="X"> Unspecified</label></div></div>
+    <div class="row">
+      <div><label for="nat">Nationality</label><select id="nat" name="pax[0].nationality"><option value="">Select</option><option value="CA">Canada</option><option value="MX">Mexico</option><option value="GB">United Kingdom</option><option value="US">United States of America</option></select></div>
+      <div><label for="ktn">Known Traveler Number (optional)</label><input type="text" id="ktn" name="pax[0].ktn"></div>
+      <div><label for="rdr">Redress number (optional)</label><input type="text" id="rdr" name="pax[0].redress"></div>
+    </div>
+    <div class="row">
+      <div><label for="ffp">SkyPoints number</label><input type="text" id="ffp" name="pax[0].ffn"></div>
+      <div><label for="asst">Special assistance</label><select id="asst" name="pax[0].ssr"><option value="">None needed</option><option>Wheelchair to gate</option><option>Travelling with a service animal</option></select></div>
+    </div>
+  </fieldset>
+  <fieldset><legend>Emergency contact</legend>
+    <div class="row">
+      <div><label for="en">Full name</label><input type="text" id="en" name="emergency.name"></div>
+      <div><label for="ep">Phone number</label><input type="tel" id="ep" name="emergency.phone"></div>
+    </div>
+  </fieldset>
+  <label class="inline"><input type="checkbox" name="offers"> Email me fare deals from Practice Air</label>
+  <div id="problems" class="error" style="display:none"></div>
+  <div class="actions"><button type="button" onclick="history.back()">Back</button><button type="submit" class="primary">Continue to contact details</button></div>
+</form>
+<script>
+  var d = document.getElementById('bd'), y = document.getElementById('by');
+  d.add(new Option('Day', ''));
+  for (var i = 1; i <= 31; i++) d.add(new Option(String(i), String(i)));
+  y.add(new Option('Year', ''));
+  for (var j = 2026; j >= 1926; j--) y.add(new Option(String(j), String(j)));
+</script>
+<script src="site.js"></script>
+</body></html>
